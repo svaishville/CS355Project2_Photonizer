@@ -1,0 +1,27 @@
+<% include header %>
+<body>
+<% include menu %>
+<h1> Lens Properties </h1>
+	<form method="Post" action="/lens/save"> 
+	<input type="hidden" name="lensid" id="lensid" value="<%= lensid %>"/>
+		<table>
+			<tr><td>Model:</td>
+				<td><input type="text" name="model" id="model" value="<%= model %>"/></td>
+			</tr>
+			<tr><td>Manufacturer:</td>
+				<td><input type="text" name="manufacturer" id="manufacturer" value="<%= manufacturer %>"/> </td>
+			</tr>
+			<tr><td>Minimum Focal Length:</td>
+				<td><input type="text" id="minfocallength" name="minfocallength" value="<%= minfocallength %>"/></td>
+			</tr>	
+			<tr><td>Maximum Focal Length:</td>
+				<td><input type="text" id="maxfocallength" name="maxfocallength" value="<%= maxfocallength %>"/></td>
+			</tr>				
+		</table>
+		<input type="submit" />
+	</form>
+	
+	
+	
+	
+<% include footer %>

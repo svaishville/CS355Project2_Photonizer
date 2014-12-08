@@ -1,0 +1,32 @@
+<% include header %>
+<body>
+<% include menu %>
+
+	<h1>Cameras</h1>
+
+	<% if(newcamera != undefined) { %>
+		<h2> Camera <%= newcamera %> successfully created. </h2>
+	<% } %>
+	
+   <% if(rs.length > 0) { %>
+	<table border="3";>
+        <tr>
+			<th>Model</th>
+			<th>Manufacturer</th>
+		</tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+			<tr>
+				<td><a href="/camera/edit/?CameraID=<%= rs[i].CameraID %>"> <%= rs[i].Model %></a></td>
+				<td><%= rs[i].Manufacturer %></a></td>
+            </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+         No cameras are entered into the database.
+    <% } %>
+
+	<a href="/camera/create">Add New Camera</a>
+	
+	
+	
+<% include footer %>

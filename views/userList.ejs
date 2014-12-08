@@ -1,0 +1,32 @@
+<% include header %>
+<body>
+<% include menu %>
+
+	<h1>Users</h1>
+	
+	<% if(newuser != undefined) { %>
+		<h2> User <%= newuser %> successfully created. </h2>
+	<% } %>
+
+	<% if(rs.length > 0) { %>
+	<table border="3";>
+        <tr>
+			<th>Username</th>
+			<th>Name</th>
+		</tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+			<tr>
+				<td><a href="/user/edit/?UserID=<%= rs[i].UserID %>"> <%= rs[i].Username %></a></td>
+				<td><%= rs[i].Name %></td>
+            </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+         No users are entered into the database.
+    <% } %>
+
+	<a href="/user/create">Create New User</a>
+	
+	
+	
+<% include footer %>

@@ -1,0 +1,21 @@
+<% include header %>
+<body>
+<% include menu %>
+<h1> Camera Properties </h1>
+	<form method="Post" action="/camera/save"> 
+	<input type="hidden" name="cameraid" id="cameraid" value="<%= cameraid %>"/>
+		<table>
+			<tr><td>Model:</td>
+				<td><input type="text" name="model" id="model" value="<%= model %>"/></td>
+			</tr>
+			<tr><td>Manufacturer:</td>
+				<td><input type="text" name="manufacturer" id="manufacturer" value="<%= manufacturer %>"/> </td>
+			</tr>
+		</table>
+		<input type="submit" />
+	</form>
+	
+	
+	
+	
+<% include footer %>

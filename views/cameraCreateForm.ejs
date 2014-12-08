@@ -1,0 +1,17 @@
+<% include header %>
+<body>
+<% include menu %>
+<h1> Create Camera </h1>
+<form method="POST" action="<%= action %>">
+    <table id="login">
+        <tr><td>Model:</td>
+            <td><input type="text" id="model" name="model" /></td>
+        </tr>
+        <tr><td>Manufacturer:</td>
+            <td><input type="text" id="manufacturer" name="manufacturer" /></td>
+        </tr>	
+    </table>
+    <input type="submit">
+</form>
+
+<% include footer %>

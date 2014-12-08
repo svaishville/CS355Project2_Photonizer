@@ -1,0 +1,35 @@
+<% include header %>
+<body>
+<% include menu %>
+
+	<h1>Lenses</h1>
+	<% if(newlens != undefined) { %>
+		<h2> Lens <%= newlens %> successfully created. </h2>
+	<% } %>
+   
+   <% if(rs.length > 0) { %>
+	<table border="3";>
+        <tr>
+			<th>Model</th>
+			<th>Manufacturer</th>
+			<th>Minimum Focal Length</th>
+			<th>Maximum Focal Length</th>
+		</tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+			<tr>
+				<td><a href="/lens/edit/?LensID=<%= rs[i].LensID %>"> <%= rs[i].Model %></a></td>
+				<td><%= rs[i].Manufacturer %></td>
+				<td><%= rs[i].MinFocalLength %></td>
+				<td><%= rs[i].MaxFocalLength %></td>
+            </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+         No lenses are entered into the database.
+    <% } %>
+
+	<a href="/lens/create">Add New Lens</a>
+	
+	
+	
+<% include footer %>

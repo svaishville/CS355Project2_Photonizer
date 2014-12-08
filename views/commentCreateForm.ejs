@@ -1,0 +1,36 @@
+<% include header %>
+<body>
+<% include menu %>
+<h1> Add Comment </h1>
+<form method="POST" action="<%= action %>">
+	<input type="hidden" name="photoid" id="photoid" value="<%= photoid %>"/>
+
+    <table id="login">
+		<tr>
+			<label for="userid">Users</label>
+			<select id="userid" name="userid">
+				<% for (var i=0; rs.length > i; i++) { %>
+				 <option value="<%= rs[i].UserID %>">
+					 <%= rs[i].Username %>
+				 </option>
+				<% } %>
+			</select>
+		</tr>
+        <tr>
+			<td>Rating:</td>
+			<td><select id="userrating" name="userrating">
+				 <option value="1">One</option>
+				 <option value="2">Two</option>
+				 <option value="3">Three</option>
+				 <option value="4">Four</option>
+				 <option value="5">Five</option>
+			</select></td>
+        </tr>	
+        <tr><td>Comment:</td>
+			<td><textarea id="usercomment" name="usercomment" row="4" cols="50"></textarea></td>
+        </tr>	
+    </table>
+    <input type="submit">
+</form>
+
+<% include footer %>

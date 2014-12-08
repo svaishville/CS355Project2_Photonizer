@@ -1,0 +1,17 @@
+<% include header %>
+<body>
+<% include menu %>
+<h1>Create User</h1>
+<form method="POST" action="<%= action %>">
+    <table id="login">
+        <tr><td>Username:</td>
+            <td><input type="text" id="username" name="username" /></td>
+        </tr>
+        <tr><td>Name:</td>
+            <td><input type="text" id="name" name="name" /></td>
+        </tr>	
+    </table>
+    <input type="submit">
+</form>
+
+<% include footer %>

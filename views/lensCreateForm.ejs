@@ -1,0 +1,23 @@
+<% include header %>
+<body>
+<% include menu %>
+<h1> Create Lens </h1>
+<form method="POST" action="<%= action %>">
+    <table id="login">
+        <tr><td>Model:</td>
+            <td><input type="text" id="model" name="model" /></td>
+        </tr>
+        <tr><td>Manufacturer:</td>
+            <td><input type="text" id="manufacturer" name="manufacturer" /></td>
+        </tr>	
+        <tr><td>Minimum Focal Length:</td>
+            <td><input type="text" id="minfocallength" name="minfocallength" /></td>
+        </tr>	
+        <tr><td>Maximum Focal Length:</td>
+            <td><input type="text" id="maxfocallength" name="maxfocallength" /></td>
+        </tr>	
+    </table>
+    <input type="submit">
+</form>
+
+<% include footer %>

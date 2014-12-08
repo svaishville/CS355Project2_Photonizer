@@ -1,0 +1,57 @@
+<% include header %>
+<body>
+<% include menu %>
+<h1> Add Photo </h1>
+<form method="POST" action="<%= action %>">
+
+    <table id="login">
+		<tr><td>User:</td>
+			<td><select id="userid" name="userid">
+				<% for (var i=0; users.length > i; i++) { %>
+					<option value="<%= users[i].UserID %>">
+						<%= users[i].Username %>
+					</option>
+				<% } %>
+			</select></td>
+		</tr>
+		<tr><td>Filename:</td>
+            <td><input type="text" id="fname" name="fname" /></td>
+        </tr>	
+			<tr><td>Camera:</td>
+				<td><select id="cameraid" name="cameraid">
+					<% for (var i=0; cameras.length > i; i++) { %>
+						<option value="<%= cameras[i].CameraID %>">
+							<%= cameras[i].Model %>
+						</option>
+					<% } %>
+				</select></td>
+			</tr>
+			<tr><td>Lens:</td>
+				<td><select id="lensid" name="lensid">
+					<% for (var i=0; lenses.length > i; i++) { %>
+						<option value="<%= lenses[i].LensID %>">
+							<%= lenses[i].Model %>
+						</option>
+					<% } %>
+				</select></td>
+			</tr>
+        <tr><td>Date:</td>
+            <td><input type="text" id="date" name="date" /></td>
+        </tr>	
+        <tr><td>ISO:</td>
+            <td><input type="text" id="iso" name="iso" /></td>
+        </tr>	
+        <tr><td>FocalLength:</td>
+            <td><input type="text" id="focallength" name="focallength" /></td>
+        </tr>	
+        <tr><td>F-stop:</td>
+            <td><input type="text" id="fstop" name="fstop" /></td>
+        </tr>	
+        <tr><td>Exposure:</td>
+            <td><input type="text" id="exposure" name="exposure" /></td>
+        </tr>	
+    </table>
+    <input type="submit">
+</form>
+
+<% include footer %>

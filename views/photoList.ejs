@@ -1,0 +1,49 @@
+<% include header %>
+<body>
+<% include menu %>
+
+	<h1>Photos</h1>
+	
+	<% if(newphoto != undefined) { %>
+		<h2> Photo <%= newphoto %> successfully created. </h2>
+	<% } %>
+	
+   <% if(rs.length > 0) { %>
+	<table border="3";>
+        <tr>
+			<th>Filename</th>
+			<th>User</th>
+			<th>Camera</th>
+			<th>Lens</th>
+			<th>Date</th>
+			<th>ISO</th>
+			<th>FocalLength</th>
+			<th>F-stop</th>
+			<th>Exposure</th>
+			<th>Comments</th>
+		</tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+			<tr>
+				<td><a href="/photo/edit/?PhotoID=<%= rs[i].PhotoID %>"> <%= rs[i].Filename %></a></td>
+				<td><%= rs[i].Username %></td>
+				<td><%= rs[i].CameraModel %></td>
+				<td><%= rs[i].LensModel %></td>
+				<td><%= rs[i].Date %></td>
+				<td><%= rs[i].ISO %></td>
+				<td><%= rs[i].FocalLength %></td>
+				<td><%= rs[i].Fstop %></td>
+				<td><%= rs[i].Exposure %></td>
+				<td><a href="/usercomment/list/?PhotoID=<%= rs[i].PhotoID %>"> Comments </a></td>
+            </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+         No lenses are entered into the database.
+    <% } %>
+
+	<a href="/photo/create">Add New Photo</a>
+	
+	
+	
+<% include footer %>
+		
